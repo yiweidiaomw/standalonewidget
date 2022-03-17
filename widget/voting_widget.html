@@ -1,0 +1,1757 @@
+
+    
+    <style>
+    /* LAYOUT CSS */
+    .voting {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        max-width: 1114px;
+        width: 100%;
+        /* border: solid; */
+        margin: auto;
+        /* grid-gap: 10px; */
+    }
+
+    .voting__title {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        align-self: center;
+        padding-bottom: 15px;
+    }
+
+    .voting__button {
+        grid-column: 2/3;
+        grid-row: 1;
+        justify-self: flex-end;
+    }
+
+    .voting__text {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+        padding-bottom: 45px;
+    }
+
+    .voting__swiper {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+
+    .voting__title2 {
+        grid-column: 1 / span 3;
+        grid-row: 4;
+    }
+
+    .voting__tabs {
+        grid-column: 1 / span 3;
+        grid-row: 5;
+    }
+
+    .voting__content {
+        grid-column: 1 / span 3;
+        grid-row: 6;
+    }
+
+    /**Responsive Layout**/
+
+    /**MOBILE**/
+
+    @media screen and (max-width: 429px) {
+        .voting {
+            max-width: 429px;
+            grid-template-columns: 100%;
+        }
+
+        .voting__title {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+        }
+
+        .voting__button {
+            grid-column: 1 / span 3;
+            grid-row: 4;
+            justify-self: center;
+            margin-bottom: 45px;
+        }
+
+        .voting__text {
+            grid-column: 1 / span 3;
+            grid-row: 2;
+            padding-bottom: 22px;
+        }
+
+        .voting__swiper {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+
+        .voting__title2 {
+            grid-column: 1 / span 3;
+            grid-row: 5;
+            justify-self: center;
+            padding-bottom: 45px;
+        }
+
+        .voting__checkbox {
+            grid-row: 4;
+            grid-column: 1/3;
+            justify-self: center;
+        }
+
+        .voting__tabs {
+            grid-column: 1;
+            grid-row: 6;
+            margin: 0 -15px;
+        }
+    }
+
+    /**TABLET**/
+
+    @media screen and (min-width:430px) and (max-width: 768px) {
+        .voting {
+            max-width: 768px;
+        }
+
+        .voting__text {
+            padding-bottom: 30px;
+        }
+    }
+
+    /* FORM CSS */
+    /**COMMON FORM COMPONENTS**/
+
+    /** HEADING TITLE **/
+
+    .title {
+        color: #db3468;
+        font-family: 'TradeGothicCondensed';
+        font-size: 25px;
+        /*2.20vw*/
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    /** CHECKBOX **/
+    .checkbox {
+        display: flex;
+        justify-content: center;
+        font-family: 'HelveticaNeue-light';
+        font-size: 18px;
+    }
+
+    .voting__checkbox {
+        grid-column: 2/3;
+        grid-row: 2;
+    }
+
+    /** LARGE BUTTON **/
+
+    .c-button {
+        background: #d1d2d3;
+        color: white;
+        font-family: 'AlternateGothic';
+        width: 100%;
+        border: none;
+        transition: all 0.2s ease;
+    }
+
+    .c-button:hover {
+        transform: scale(1.08);
+    }
+
+    .button--small {
+        max-width: 150px;
+        height: 50px;
+        border-radius: 27px;
+        font-size: 17px;
+    }
+
+    .button--medium {
+        width: 175px;
+        height: 53px;
+        border-radius: 27px;
+        font-size: 18px;
+    }
+
+    .button__icon {
+        height: 20px;
+        /* width: 20px; */
+        padding-right: 10px;
+        vertical-align: middle;
+    }
+
+    .button__icon--minus {
+        height: 4px;
+        width: 20px;
+        background: white;
+        display: inline-flex;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .button--large {
+        border-radius: 27px;
+        max-width: 302px;
+        height: 53px;
+        font-size: 18px;
+    }
+
+    .button--enabled {
+        background: #db3468;
+    }
+
+    .addSong__content {
+        display: flex;
+        width: 57%;
+        flex-flow: column;
+    }
+
+    .addSong__button {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-right: 45px;
+        align-self: flex-end;
+    }
+
+    .addSong__message {
+        margin-bottom: 25px;
+    }
+
+    .addSong__input {
+        margin-bottom: 20px;
+    }
+
+    /** MESSAGE BOX **/
+    .message {
+        width: 50%;
+        background-color: black;
+        border-radius: 36px;
+    }
+
+    .voting__message {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        place-self: center;
+        font-family: 'TradeGothicCondensed';
+        font-size: 20px;
+        color: #fff;
+        grid-column: 1 / span 3;
+        grid-row: -2;
+        margin-bottom: 20px;
+        padding: 40px 10px;
+    }
+
+    /** CIRCLE BUTTON **/
+
+    .button--circle {
+        border: 2px solid white;
+        width: 28px;
+        height: 28px;
+        border-radius: 100%;
+        margin: 4px;
+        display: inline-block;
+        vertical-align: middle;
+        background: #db3468;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transition: all 0.2s ease;
+    }
+
+    .button--circle:hover {
+        transform: scale(1.1);
+    }
+
+    .button--circle.plus:before,
+    .button--circle.plus:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: green;
+    }
+
+    .button--circle.plus:before {
+        width: 2px;
+        margin: 2px auto;
+    }
+
+    .button--circle.plus:after {
+        margin: auto 2px;
+        height: 2px;
+    }
+
+    .button--circle.minus:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        margin: auto 6px;
+        height: 3px;
+    }
+
+    /** TEXT **/
+
+    .text {
+        font-family: 'HelveticaNeue-light';
+        font-size: 18px;
+    }
+
+    /** TABS **/
+
+    .tabls {
+        display: grid;
+        grid-template-rows: auto auto;
+    }
+
+    .tabs__list {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .tabs__tab {
+        cursor: pointer;
+        padding: 10px 5px;
+        font-size: 12px;
+        font-family: 'AlternateGothic';
+        font-size: 25px;
+        color: #D0D2D2;
+        text-align: center;
+        min-width: 115px;
+    }
+
+    .tabs__tab.is-tab-selected {
+        /* border-bottom-color: #4EBBE4; */
+        color: #db3468;
+        width: 115px;
+        /* height: 51px; */
+        background: #EAEBEC;
+    }
+
+    #body__search,
+    #body__add {
+        display: none;
+    }
+
+    .tabs__body {
+        background: #EAEBEC;
+        min-height: 200px;
+        padding: 45px;
+        font-family: 'HelveticaNeue-light';
+        margin: 0 -20px;
+    }
+
+    /** RADIO BUTTONS **/
+
+    .radio__label {
+        display: flex;
+        position: relative;
+        padding-left: 30px;
+        margin-right: 20px;
+        cursor: pointer;
+        font-size: 15px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+
+    .radio__label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .radio__checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 17px;
+        width: 17px;
+        background-color: #fff;
+        border: 1px solid #D1D2D3;
+        border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+
+    .radio__label:hover input~.radio__checkmark {
+        background-color: #D1D2D3;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+
+    .radio__checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+
+    .radio__label input:checked~.radio__checkmark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+
+    .radio__label .radio__checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #db3468;
+    }
+
+    /** CHECKBOX **/
+  
+    .checkbox__label {
+        display: flex;
+        position: relative;
+        padding-left: 30px;
+        margin-right: 20px;
+        cursor: pointer;
+        font-size: 15px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Hide the browser's default check button */
+
+    .checkbox__label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkbox__checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 17px;
+        width: 17px;
+        background-color: #fff;
+        border: 1px solid #D1D2D3;
+        border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+
+    .checkbox__label:hover input~.checkbox__checkmark {
+        background-color: #D1D2D3;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+
+    .checkbox__checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+
+    .checkbox__label input:checked~.checkbox__checkmark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+
+    .checkbox__label .checkbox__checkmark:after {
+        left: 4px;
+        top: 1px;
+        width: 6px;
+        height: 11px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .checkbox__label input:checked~.checkbox__checkmark {
+        background-color: #db3468;
+    }
+
+    /** FILTER BROWSE **/
+
+    .filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 35px
+    }
+
+    .filter__browse {
+        min-height: 49px;
+    }
+
+    .radio__wrapper {
+        display: flex;
+    }
+
+    .slider__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .filter__slider {
+        max-width: 748px;
+        width: 100em;
+        border: none !important;
+        height: 1px !important;
+        background: #d1d2d3 !important;
+    }
+
+    .filter__sliderTextStart {
+        font-family: 'TradeGothicCondensed';
+        font-size: 28px;
+        padding-right: 15px;
+    }
+
+    .filter__sliderTextEnd {
+        font-family: 'TradeGothicCondensed';
+        font-size: 28px;
+        padding-left: 15px;
+    }
+
+    #custom-handle {
+        width: 29px;
+        height: 29px;
+        top: 50%;
+        margin-top: -.95em;
+        text-align: center;
+        line-height: 29px;
+        background: #db3468;
+        color: #ffffff;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+        outline: none;
+    }
+
+    #custom-handle:hover {
+        transform: scale(1.1)
+    }
+
+    .songs {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+        justify-content: flex-start;
+    }
+
+    .song {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-flow: column;
+        max-width: 160px;
+        width: 100%;
+        height: 312px;
+        background: #fff;
+        margin: 10px 10px;
+        border-radius: 0px 0px 29px 29px;
+        flex: 1 0 140px;
+        /*reduce width to 140px before wrap*/
+    }
+
+    .song__artwork {
+        max-width: 150px;
+        max-height: 150px;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+    }
+
+    .song__artwork img {
+        background: 0% 0% no-repeat padding-box;
+        max-width: 150px;
+        max-height: 150px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .song__detail {
+        text-align: center;
+        padding: 25px 5px;
+    }
+
+    .song__title {
+        color: #db3468;
+        font-size: 18px;
+        width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .song__artist {
+        font-size: 14px;
+        margin-top: 3px;
+        width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .filter__search {
+        min-height: 49px;
+        justify-content: flex-start !important;
+    }
+
+    /** INPUT **/
+
+    .c-input {
+        outline: none;
+        border: 1px solid #D1D2D3;
+    }
+
+    .input--error {
+        border: 1px solid #db3468
+    }
+
+    .input--large {
+        width: 330px;
+        height: 45px;
+        border-radius: 31px;
+        padding-left: 40px;
+    }
+
+    .input--xlarge {
+        width: 560px;
+        height: 45px;
+        border-radius: 31px;
+        padding-left: 26px;
+    }
+
+    .input--search {
+        background: white url('https://images.mediaworks.nz/countdown/voting_widget/img/searchicon.png') no-repeat scroll 15px 12px;
+        background-size: 19px;
+    }
+
+    /*********** ENDSCREEN DESIGNS **************/
+
+    .share {
+        display: block;
+        /* max-width:1114px;
+        width: 100%; */
+        margin: 0 20px;
+    }
+
+    .share__header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -35px;
+        padding: 30px 20px;
+        padding-bottom: 20px;
+        /* background: transparent url('https://images.mediaworks.nz/countdown/voting_widget/img/share-bg.png') 0% 0% */
+        background:linear-gradient(135deg,#e25985 0,#df4c7a 10%,#cf3062 23%,#cf3062 23%,#cf3062 56%,#db4574 99%)
+    }
+
+    .share__header img {
+        height: 100px;
+        width: 100px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+
+    .share__content {
+        display: flex;
+        flex-direction: column;
+        padding: 45px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .share__heading {
+        font-family: 'TradeGothicCondensed';
+        color: #db3468;
+        padding-bottom: 15px;
+    }
+
+    .share__heading--h1 {
+        font-size: 37px;
+    }
+
+    .share__heading--h2 {
+        font-family: 'HelveticaNeue-light';
+        font-size: 20px;
+        color: black;
+    }
+
+    .share__heading--h3 {
+        font-size: 21px;
+    }
+
+    .share__heading--h4 {
+        display: none;
+    }
+
+    .share__messageH2 {
+        font-family: 'HelveticaNeue-light';
+        font-size: 20px;
+        padding-bottom: 35px;
+    }
+
+    .share__messageH3 {
+        font-family: 'TradeGothicCondensed';
+        font-size: 21px;
+        color: #db3468;
+    }
+
+    .facebook {
+        height: 65px;
+        width: 65px;
+        border-radius: 12px;
+        background: #465A93;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    #fbShare {
+        padding-right: 5px;
+    }
+
+    .facebook img {
+        height: 32px;
+        width: 18px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .facebook,
+    .facebook img {
+        transition: ease 0.2s all;
+    }
+
+    .facebook:hover,
+    .facebook img:hover {
+        transform: scale(1.08);
+        cursor: pointer;
+    }
+
+    .share__icons {
+        display: flex;
+        padding-bottom: 20px;
+    }
+
+    .share__artwork {
+        max-width: 600px;
+    }
+
+    .fa {
+        /* padding: 20px; */
+        font-size: 30px;
+        width: 65px;
+        height: 65px;
+        border-radius: 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px !important;
+        margin-right: 15px;
+        margin-bottom: 45px;
+        transition: ease 0.2s all;
+    }
+
+    /* Add a hover effect if you want */
+
+    .fa:hover {
+        /* opacity: 0.7; */
+        transform: scale(1.08);
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    /* Twitter */
+
+    .fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    /* Link */
+
+    .fa-link {
+        background: #727272;
+        color: white;
+    }
+
+    /**Responsive Layout**/
+
+    /**MOBILE**/
+
+    @media screen and (max-width: 429px) {
+
+        /** HEADING TITLE **/
+        .title {
+            font-size: 25px;
+        }
+
+        .message {
+            width: 95%;
+        }
+
+        .share {
+            max-width: 429px;
+            margin: -20px;
+        }
+
+        .share__header {
+            margin: 0 20px;
+        }
+
+        .share__heading--h2 {
+            display: none;
+        }
+
+        /* .share__heading--h3 {
+            display: none;
+        } */
+
+        .share__heading--h4 {
+            display: block;
+            text-align: center;
+            font-family: 'HelveticaNeue-light';
+            font-size: 15px;
+            color: black;
+        }
+
+        /* .share__icons {
+            display: none;
+        } */
+
+        .share__content {
+            padding: 15px;
+        }
+
+        .button--large {
+            border-radius: 22px;
+            max-width: 218px;
+            height: 43px;
+            font-size: 14px;
+        }
+
+        .tabs__tab {
+            padding: 5px 18px;
+            font-size: 18px;
+            /* line-height: 50px; */
+            min-width: 0;
+        }
+
+        .tabs__tab.is-tab-selected {
+            width: auto;
+            /* line-height: 50px; */
+        }
+
+        .tabs__body {
+            padding: 25px 15px;
+            margin: 0;
+        }
+
+        .radio__label {
+            padding-left: 30px;
+            padding-top: 5px;
+            margin-right: 20px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .radio__checkmark {
+            height: 22px;
+            width: 22px;
+            top: 3px;
+        }
+
+        .radio__label .radio__checkmark:after {
+            top: 3px;
+            left: 3px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #db3468;
+        }
+
+        .radio__wrapper {
+            display: flex;
+            padding-bottom: 20px;
+        }
+
+        .slider__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .voting__checkbox {
+            grid-column: 1/3;
+            grid-row: 4;
+            justify-self: center;
+            margin-top: 50px;
+        }
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"] {
+            font-size: 16px;
+        }
+
+        .input__wrapper {
+            width: 100%;
+        }
+
+        .input--large {
+            width: 100%;
+        }
+
+        .input--xlarge {
+            width: 100%;
+        }
+
+        .filter {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .filter__slider {
+            max-width: 300px;
+            width: 100%;
+            border: none !important;
+            height: 1px !important;
+            background: #d1d2d3 !important;
+        }
+
+        .filter__sliderTextStart {
+            font-family: 'TradeGothicCondensed';
+            font-size: 28px;
+            padding-right: 15px;
+        }
+
+        .filter__sliderTextEnd {
+            font-family: 'TradeGothicCondensed';
+            font-size: 28px;
+            padding-left: 15px;
+        }
+
+        .songs__message {
+            padding: 15px;
+        }
+
+        .songs {
+            margin: 0 -5px;
+            justify-content: space-evenly;
+        }
+
+        .song {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-flow: column;
+            max-width: 114px;
+            width: 100%;
+            height: 219px;
+            background: #fff;
+            margin: 8px 1px;
+            border-radius: 0px 0px 21px 21px;
+            flex: 1 0 100px;
+        }
+
+        .song__artwork {
+            max-width: 104px;
+            max-height: 104px;
+            width: 100%;
+            height: 100%;
+            margin-top: 5px;
+        }
+
+        .song__artwork img {
+            background: 0% 0% no-repeat padding-box;
+            max-width: 104px;
+            max-height: 104px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .song__detail {
+            text-align: center;
+            padding: 17px 5px;
+        }
+
+        .song__title {
+            color: #db3468;
+            font-size: 12px;
+            width: 100px;
+        }
+
+        .song__artist {
+            font-size: 10px;
+            margin-top: 3px;
+            width: 100px;
+        }
+
+        .button--small {
+            max-width: 104px;
+            width: 100%;
+            height: 35px;
+            font-size: 14px;
+        }
+
+        .button__icon {
+            height: 14px;
+            /* width: 14px; */
+        }
+
+        .button__icon--minus {
+            height: 3px;
+            width: 11px;
+        }
+
+        .addSong__button {
+            align-self: center;
+            margin-right: 0;
+        }
+
+        .addSong__content {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /*********** ENDSCREEN DESIGNS **************/
+
+        .endScreenHeader {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -20px;
+            padding: 30px 20px;
+            padding-bottom: 20px;
+        }
+
+        .endScreenHeader img {
+            height: 66px;
+            width: 66px;
+            padding-right: 7px;
+            padding-bottom: 10px;
+        }
+
+        .endScreenShare {
+            display: flex;
+            flex-direction: column;
+            padding: 45px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .share__messageH1 {
+            font-family: 'TradeGothicCondensed';
+            font-size: 24px;
+            color: #db3468;
+            padding-bottom: 15px;
+        }
+
+        .share__messageH2 {
+            font-family: 'HelveticaNeue-light';
+            font-size: 15px;
+            padding-bottom: 35px;
+        }
+
+        .share__messageH3 {
+            font-family: 'TradeGothicCondensed';
+            font-size: 20px;
+            color: #db3468;
+        }
+
+        .share__heading--h1 {
+            font-size: 29px;
+            text-align: center;
+        }
+
+        .share__heading--h2 {
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .share__heading--h3 {
+            font-size: 20px;
+        }
+
+        .share__artwork {
+            width: 100%;
+            /* max-width: 345px; */
+        }
+
+        .facebook {
+            height: 58px;
+            width: 59px;
+            border-radius: 12px;
+        }
+
+        .facebook img {
+            height: 32px;
+            width: 18px;
+        }
+
+        .fa {
+            /* padding: 20px; */
+            font-size: 30px;
+            width: 58px;
+            height: 58px;
+            border-radius: 12px;
+            font-size: 30px;
+            margin-right: 15px;
+            margin-bottom: 45px;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+            /* opacity: 0.7; */
+            transform: scale(1.08);
+        }
+
+        /* Set a specific color for each brand */
+        /* Facebook */
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        /* Twitter */
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        /* Link */
+        .fa-link {
+            background: #727272;
+            color: white;
+        }
+    }
+
+    /**TABLET**/
+
+    @media screen and (min-width:430px) and (max-width: 768px) {
+        .title {
+            font-size: 24px;
+        }
+
+        .share {
+            max-width: 768px;
+        }
+
+        .share__artwork {
+            max-width: 396px;
+        }
+
+        .button--large {
+            border-radius: 18px;
+            max-width: 186px;
+            height: 35px;
+            font-size: 12px;
+        }
+
+        .tabs__body {
+            padding: 33px;
+        }
+
+        .filter__slider {
+            max-width: 450px;
+            width: 100em;
+            border: none !important;
+            height: 1px !important;
+            background: #d1d2d3 !important;
+            margin-top: 5px;
+        }
+
+        .filter__sliderTextStart {
+            font-family: 'TradeGothicCondensed';
+            font-size: 15px;
+            padding-right: 10px;
+        }
+
+        .filter__sliderTextEnd {
+            font-family: 'TradeGothicCondensed';
+            font-size: 15px;
+            padding-left: 10px;
+        }
+
+        .radio__label {
+            padding-left: 20px;
+            font-size: 12px;
+        }
+
+        .radio__label .radio__checkmark:after {
+            top: 1px;
+            left: 1px;
+            width: 7px;
+            height: 7px;
+        }
+
+        .radio__checkmark {
+            height: 11px;
+            width: 11px;
+        }
+
+        #custom-handle {
+            width: 20px;
+            height: 20px;
+            margin-top: -.75em;
+            line-height: 20px;
+        }
+
+        .songs {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .song {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-flow: column;
+            max-width: 109px;
+            width: 100%;
+            height: 210px;
+            background: #fff;
+            margin: 8px 3px;
+            border-radius: 0px 0px 19px 19px;
+            flex: 1 0 95px;
+        }
+
+        .song__artwork {
+            max-width: 100px;
+            max-height: 100px;
+            width: 100%;
+            height: 100%;
+            margin-top: 5px;
+        }
+
+        .song__artwork img {
+            background: 0% 0% no-repeat padding-box;
+            max-width: 100px;
+            max-height: 100px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .song__detail {
+            text-align: center;
+            padding: 16px 5px;
+        }
+
+        .song__title {
+            color: #db3468;
+            font-size: 12px;
+            width: 100px;
+        }
+
+        .song__artist {
+            font-size: 10px;
+            margin-top: 3px;
+            width: 100px;
+        }
+
+        .filter {
+            padding-bottom: 25px;
+        }
+
+        .filter__browse {
+            min-height: 35px;
+        }
+
+        .filter__search {
+            min-height: 35px;
+        }
+
+        .button--small {
+            max-width: 100px;
+            width: 100%;
+            height: 33px;
+            font-size: 11px;
+        }
+
+        .button--medium {
+            max-width: 101px;
+            height: 35px;
+            font-size: 12px;
+        }
+
+        .button__icon {
+            height: 13px;
+            /* width: 13px; */
+        }
+
+        .button__icon--minus {
+            height: 3px;
+            width: 11px;
+        }
+
+        .addSong__content {
+            width: max-content;
+            align-items: center;
+            margin: auto;
+        }
+
+        .input--large {
+            width: 294px;
+            height: 33px;
+            border-radius: 31px;
+            padding-left: 35px;
+        }
+
+        .input--xlarge {
+            width: 331px;
+            height: 33px;
+            border-radius: 31px;
+            padding-left: 26px;
+        }
+
+        .input--search {
+            background: white url('https://images.mediaworks.nz/countdown/voting_widget/img/searchicon.png') no-repeat scroll 12px 12px;
+            background-size: 13px;
+        }
+
+        .share__heading--h4 {
+            display: none;
+        }
+    }
+
+    /* SWIPER CSS */
+    .swiper {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 35px;
+    }
+
+    .swiper-slide {
+        align-items: flex-start !important;
+    }
+
+    .swiper-wrapper {
+        margin-left: 30px;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 340px;
+        margin-bottom: 35px;
+        overflow: hidden;
+        
+    }
+
+    .swiper__slide {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-rows: auto auto auto;
+        padding-right: 10px;
+    }
+
+    .slide {
+        font-family: 'HelveticaNeue-light';
+    }
+
+    .slide__artwork {
+        grid-column: 1 / span 3;
+        grid-row: 2/3;
+        height: 135px;
+        width: 135px;
+        cursor: pointer;
+    }
+
+    .slide__number {
+        grid-column: 1 / 2;
+        grid-row: 3 / span 2;
+        align-self: center;
+        font-family: 'TradeGothicCondensed';
+        text-align: left;
+        font-size: 60px;
+        line-height: 45px;
+        font-weight: bold;
+        color: #d1d2d3;
+    }
+
+    .slide__number--added {
+        color: #db3468;
+    }
+
+    .slide__song {
+        grid-column: 2 / span 3;
+        grid-row: 3;
+        text-align: left;
+        font-size: 18px;
+        color: #d1d2d3;
+        width: 144px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .slide__song--added {
+        color: #db3468;
+    }
+
+    .slide__artist {
+        grid-column: 2 / span 3;
+        grid-row: 4;
+        text-align: left;
+        font-size: 14px;
+        color: #d1d2d3;
+        width: 144px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .slide__artist--added {
+        color: #000;
+    }
+
+    .slide__artwork {
+        background: #eaebec;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 217px;
+        width: 217px;
+        margin-bottom: 15px;
+        transition: all 0.2s ease;
+    }
+
+    .slide__placeholder {
+        height: 38px;
+    }
+
+    .slide__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .slide__artwork:hover {
+        transform: scale(1.1);
+    }
+
+    .slide__artwork--added {
+        position: relative;
+    }
+
+    .swiper-scrollbar {
+        height: 28px !important;
+        background: #eaebec !important;
+        left: 0% !important;
+        width: 100% !important;
+    }
+
+    .swiper-scrollbar-drag {
+        background: #db3468 !important;
+        /* width: 151px !important; */
+        height: 28px !important;
+        border-radius: 14px !important;
+    }
+
+    /**Responsive Layout**/
+
+    /**MOBILE**/
+
+    @media screen and (max-width: 429px) {
+        .swiper {
+            padding-bottom: 10px;
+        }
+
+        .swiper-container {
+            height: 300px;
+        }
+
+        .swiper-wrapper {
+            margin-left: 15px;
+        }
+
+        .swiper__slide {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-rows: auto auto auto;
+            width: 140px;
+            padding-right: 10px;
+        }
+
+        .slide__artwork {
+            grid-column: 1 / span 3;
+            grid-row: 2/3;
+            height: 135px;
+            width: 135px;
+        }
+
+        .slide__number {
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 40px;
+        }
+
+        .slide__song {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+            font-size: 18px;
+            width: 140px;
+        }
+
+        .slide__artist {
+            grid-column: 1 / span 3;
+            grid-row: 4;
+            font-size: 15px;
+            width: 140px;
+        }
+
+        .swiper-scrollbar {
+            height: 23px !important;
+            background: #eaebec !important;
+            left: 0% !important;
+            width: 100% !important;
+            top: 50px;
+            position: fixed;
+        }
+
+        .swiper-scrollbar-drag {
+            background: #db3468 !important;
+            /* width: 90px !important; */
+            height: 23px !important;
+            border-radius: 14px !important;
+        }
+    }
+
+    /**TABLET**/
+
+    @media screen and (min-width: 430px) and (max-width: 768px) {
+        .slide__artwork {
+            height: 200px;
+            width: 200px;
+        }
+
+        .slide__number {
+            font-size: 55px;
+            line-height: 40px;
+        }
+
+        .slide__song {
+            font-size: 16px;
+            width: 130px;
+        }
+
+        .slide__artist {
+            font-size: 12px;
+            width: 130px;
+        }
+
+        .swiper-scrollbar {
+            height: 14px !important;
+            background: #eaebec !important;
+            left: 0% !important;
+            width: 100% !important;
+        }
+
+        .swiper-scrollbar-drag {
+            background: #db3468 !important;
+            /* width: 75px !important; */
+            height: 14px !important;
+            border-radius: 14px !important;
+        }
+    }
+
+    /**Introduce External Fonts**/
+
+    .font_introduce {
+        font-family: 'TradeGothicCondensed';
+    }
+</style>
+    
+<!DOCTYPE html>
+<html>
+<!--<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="rock_2021.js"></script>
+</head> -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-dependencies.min.5350.css" type="text/css">
+<link rel="stylesheet" href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-site.min.5350.css" type="text/css">
+<link rel="stylesheet" href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-preload.min.5350.css" type="text/css">
+
+<link rel="stylesheet" href="https://www.theedge.co.nz/design/clientlibs.min.52670.css" type="text/css">
+
+
+</head>
+<body>
+<!-- <body style="margin:20px;"> -->
+<div class="voting">
+    <div class="message voting__message" style="display:none;"></div>
+    <div class="title voting__title">VOTE NOW IN THIS IS TEST VOTE NAME</div>
+    <button id="submitVotes" class="c-button button--large voting__button" disabled>SUBMIT YOUR VOTES</button>
+    <div class="text voting__text">Add 1-8 of your favourite songs to submit your countdown
+        <span class="font_introduce">&nbsp;</span>
+    </div>
+    <div class="checkbox__wrapper voting__checkbox">
+        <label class="checkbox__label">this is a fake promotion
+            <input type="checkbox" id="tAndC">
+            <span class="checkbox__checkmark"></span>
+        </label>
+    </div>
+    <div class="swiper-container voting__swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <div class="title voting__title2">ADD SONGS BELOW</div>
+    <div class="tabs voting__tabs">
+        <div class="tabs__list">
+            <div id="browse" class="tabs__tab is-tab-selected">Browse</div>
+            <div id="search" class="tabs__tab">Search</div>
+            <div id="add" class="tabs__tab">Add Your Own</a></div>
+        </div>
+        <div class="tabs__body">
+            <div id="body__browse">
+                <div class="filter filter__browse">
+                    <div class="radio__wrapper">
+                        <label class="radio__label">By Artist
+                            <input type="radio" value="ARTIST" name="browseRadio">
+                            <span class="radio__checkmark"></span>
+
+                        </label>
+                        <label class="radio__label">By Song
+                            <input type="radio" value="SONG" checked name="browseRadio" value="song">
+                            <span class="radio__checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="slider__wrapper">
+                        <div class="filter__sliderTextStart">A</div>
+                        <div id="slider" class="filter__slider">
+                            <div id="custom-handle" class="ui-slider-handle"></div>
+                        </div>
+                        <div class="filter__sliderTextEnd">Z</div>
+                    </div>
+                </div>
+            </div>
+            <div id="body__search">
+                <div class="filter filter__search">
+                    <div class="radio__wrapper">
+                        <label class="radio__label">By Artist
+                            <input type="radio" value="ARTIST" name="searchRadio">
+                            <span class="radio__checkmark"></span>
+
+                        </label>
+                        <label class="radio__label">By Song
+                            <input type="radio" checked value="SONG" name="searchRadio" value="song">
+                            <span class="radio__checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="input__wrapper">
+                        <input id="searchTerm" type="text" class="c-input input--large input--search"
+                            placeholder="Search" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="body__add">
+                <div class="addSong__content">
+                    <div class="addSong__message">Can’t find a song in our database? Add your own.</div>
+                    <input id="inputAddSongTitle" type="text" class="c-input input--xlarge addSong__input"
+                        placeholder="Song Name" maxlength="100" />
+                    <input id="inputAddSongArtist" type="text" class="c-input input--xlarge addSong__input"
+                        placeholder="Artist Name" maxlength="100" />
+                    <button id="btnManualEntry" class="c-button button--medium button--enabled addSong__button">ADD
+                        SONG</button>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="songs__message" style="display:none;"></div>
+                <!-- Songs list -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="share" style="display:none;">
+    <div class="share__header">
+    </div>
+    <div class="share__content">
+        <div class="share__heading share__heading--h1">YOUR VOTES HAVE BEEN ENTERED</div>
+        <div class="share__heading share__heading--h2">Share your entry with your friends automatically below or
+            alternatively save this image to share on a social platform of your choice.</div>
+        <div class="share__heading share__heading--h4" style="margin-bottom: 20px;">Share your votes via the social
+            icons below!<br>Tap and hold the image to save, then share to instagram.</div>
+        <div class="share__heading share__heading--h3">SHARE TO</div>
+        <div class="share__icons">
+            <!-- <div id="fb-root"></div> -->
+            <div id="fbShare" class="fb-share-button" data-href="https://www.your-domain.com/your-page.html"
+                data-layout="button" data-size="large">
+            </div>
+            <div id="twitterShare" class="twitter-share"></div>
+            <div id="instaShare" style="margin-left:5px;"><a href="https://instagram.com" target="_blank"><img
+                        src="https://images.mediaworks.nz/countdown/image/insta-icon.png" height="28px"
+                        width="28px"></a></div>
+            <!-- <a href="#" class="fa fa-facebook"></a> -->
+            <!-- <a href="#" class="fa fa-twitter"></a> -->
+            <!-- <a href="#" class="fa fa-link"></a> -->
+        </div>
+        <!-- <div><div class="share__heading share__heading--h4" style="margin-bottom: 20px;">Tap and hold the image below to see all sharing options</div></div> -->
+        <div class="share__artwork">
+        </div>
+    </div>
+</div>
+<div id="playlist">
+    <script
+        type="text/javascript">(function () { var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0]; script.src = "https://radio-api.mediaworks.nz/widget/votewidgettest1MW16474817/voting_THEEDGE_THISISTESTVOTENAME_2022.js"; tag.parentNode.insertBefore(script, tag); })()
+    </script>
+</div>
+</body>
+</html> 
