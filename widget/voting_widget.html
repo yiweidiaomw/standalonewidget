@@ -1,6 +1,4 @@
-
-    
-    <style>
+<style>
     /* LAYOUT CSS */
     .voting {
         display: grid;
@@ -39,6 +37,7 @@
     .voting__title2 {
         grid-column: 1 / span 3;
         grid-row: 4;
+        margin-top: 30px;
     }
 
     .voting__tabs {
@@ -414,7 +413,7 @@
     }
 
     /** CHECKBOX **/
-  
+
     .checkbox__label {
         display: flex;
         position: relative;
@@ -659,7 +658,7 @@
         padding: 30px 20px;
         padding-bottom: 20px;
         /* background: transparent url('https://images.mediaworks.nz/countdown/voting_widget/img/share-bg.png') 0% 0% */
-        background:linear-gradient(135deg,#e25985 0,#df4c7a 10%,#cf3062 23%,#cf3062 23%,#cf3062 56%,#db4574 99%)
+        background: linear-gradient(135deg, #e25985 0, #df4c7a 10%, #cf3062 23%, #cf3062 23%, #cf3062 56%, #db4574 99%)
     }
 
     .share__header img {
@@ -908,12 +907,14 @@
             justify-content: space-between;
             width: 100%;
         }
+
         .voting__checkbox {
             grid-column: 1/3;
             grid-row: 4;
             justify-self: center;
             margin-top: 50px;
         }
+
         select,
         textarea,
         input[type="text"],
@@ -1365,16 +1366,18 @@
         align-items: flex-start !important;
     }
 
-    .swiper-wrapper {
+    /* .swiper-wrapper {
         margin-left: 30px;
-    }
+    } */
 
     .swiper-container {
         width: 100%;
         height: 340px;
         margin-bottom: 35px;
         overflow: hidden;
-        
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
     }
 
     .swiper__slide {
@@ -1386,6 +1389,7 @@
 
     .slide {
         font-family: 'HelveticaNeue-light';
+        background-color: white;
     }
 
     .slide__artwork {
@@ -1479,6 +1483,12 @@
         width: 100% !important;
     }
 
+    .swiper-scrollbar {
+        position: absolute;
+        bottom: 3px;
+        z-index: 50;
+    }
+
     .swiper-scrollbar-drag {
         background: #db3468 !important;
         /* width: 151px !important; */
@@ -1499,9 +1509,9 @@
             height: 300px;
         }
 
-        .swiper-wrapper {
+        /* .swiper-wrapper {
             margin-left: 15px;
-        }
+        } */
 
         .swiper__slide {
             display: grid;
@@ -1543,8 +1553,6 @@
             background: #eaebec !important;
             left: 0% !important;
             width: 100% !important;
-            top: 50px;
-            position: fixed;
         }
 
         .swiper-scrollbar-drag {
@@ -1599,7 +1607,7 @@
         font-family: 'PlatformBold';
     }
 </style>
-    
+
 <!DOCTYPE html>
 <html>
 <!--<head>
@@ -1607,6 +1615,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="rock_2021.js"></script>
 </head> -->
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -1616,142 +1625,153 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    <link rel="stylesheet" href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-dependencies.min.5350.css" type="text/css">
-<link rel="stylesheet" href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-site.min.5350.css" type="text/css">
-<link rel="stylesheet" href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-preload.min.5350.css" type="text/css">
+    <link rel="stylesheet"
+        href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-dependencies.min.5350.css"
+        type="text/css">
+    <link rel="stylesheet"
+        href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-site.min.5350.css"
+        type="text/css">
+    <link rel="stylesheet"
+        href="https://www.todayfm.co.nz/etc.clientlibs/mws-sites-nextgen/clientlibs/clientlib-preload.min.5350.css"
+        type="text/css">
 
-<link rel="stylesheet" href="https://www.theedge.co.nz/design/clientlibs.min.52670.css" type="text/css">
+    <link rel="stylesheet" href="https://www.theedge.co.nz/design/clientlibs.min.52670.css" type="text/css">
 
 
 </head>
-<body>
-<!-- <body style="margin:20px;"> -->
-<div class="voting">
-    <div class="message voting__message" style="display:none;"></div>
-    <div class="title voting__title">VOTE NOW IN THIS IS TEST VOTE NAME</div>
-    <button id="submitVotes" class="c-button button--large voting__button" disabled>SUBMIT YOUR VOTES</button>
-    <div class="text voting__text">Add 1-8 of your favourite songs to submit your countdown
-        <span class="font_introduce">&nbsp;</span>
-    </div>
-    <div class="checkbox__wrapper voting__checkbox">
-        <label class="checkbox__label">this is a fake promotion
-            <input type="checkbox" id="tAndC">
-            <span class="checkbox__checkmark"></span>
-        </label>
-    </div>
-    <div class="swiper-container voting__swiper mySwiper">
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-        </div>
-        <div class="swiper-scrollbar"></div>
-    </div>
-    <div class="title voting__title2">ADD SONGS BELOW</div>
-    <div class="tabs voting__tabs">
-        <div class="tabs__list">
-            <div id="browse" class="tabs__tab is-tab-selected">Browse</div>
-            <div id="search" class="tabs__tab">Search</div>
-            <div id="add" class="tabs__tab">Add Your Own</a></div>
-        </div>
-        <div class="tabs__body">
-            <div id="body__browse">
-                <div class="filter filter__browse">
-                    <div class="radio__wrapper">
-                        <label class="radio__label">By Artist
-                            <input type="radio" value="ARTIST" name="browseRadio">
-                            <span class="radio__checkmark"></span>
 
-                        </label>
-                        <label class="radio__label">By Song
-                            <input type="radio" value="SONG" checked name="browseRadio" value="song">
-                            <span class="radio__checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="slider__wrapper">
-                        <div class="filter__sliderTextStart">A</div>
-                        <div id="slider" class="filter__slider">
-                            <div id="custom-handle" class="ui-slider-handle"></div>
+<body style="margin:20px;">
+    <!-- <body style="margin:20px;"> -->
+    <div class="voting">
+        <div class="message voting__message" style="display:none;"></div>
+        <div class="title voting__title">VOTE NOW IN THIS IS TEST VOTE NAME</div>
+        <button id="submitVotes" class="c-button button--large voting__button" disabled>SUBMIT YOUR VOTES</button>
+        <div class="text voting__text">Add 1-8 of your favourite songs to submit your countdown
+            <span class="font_introduce">&nbsp;</span>
+        </div>
+        <div class="checkbox__wrapper voting__checkbox">
+            <label class="checkbox__label">this is a fake promotion
+                <input type="checkbox" id="tAndC">
+                <span class="checkbox__checkmark"></span>
+            </label>
+        </div>
+        <div class="swiper-container voting__swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="title voting__title2">ADD SONGS BELOW</div>
+        <div class="tabs voting__tabs">
+            <div class="tabs__list">
+                <div id="browse" class="tabs__tab is-tab-selected">Browse</div>
+                <div id="search" class="tabs__tab">Search</div>
+                <div id="add" class="tabs__tab">Add Your Own</a></div>
+            </div>
+            <div class="tabs__body">
+                <div id="body__browse">
+                    <div class="filter filter__browse">
+                        <div class="radio__wrapper">
+                            <label class="radio__label">By Artist
+                                <input type="radio" value="ARTIST" name="browseRadio">
+                                <span class="radio__checkmark"></span>
+
+                            </label>
+                            <label class="radio__label">By Song
+                                <input type="radio" value="SONG" checked name="browseRadio" value="song">
+                                <span class="radio__checkmark"></span>
+                            </label>
                         </div>
-                        <div class="filter__sliderTextEnd">Z</div>
+                        <div class="slider__wrapper">
+                            <div class="filter__sliderTextStart">A</div>
+                            <div id="slider" class="filter__slider">
+                                <div id="custom-handle" class="ui-slider-handle"></div>
+                            </div>
+                            <div class="filter__sliderTextEnd">Z</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="body__search">
-                <div class="filter filter__search">
-                    <div class="radio__wrapper">
-                        <label class="radio__label">By Artist
-                            <input type="radio" value="ARTIST" name="searchRadio">
-                            <span class="radio__checkmark"></span>
+                <div id="body__search">
+                    <div class="filter filter__search">
+                        <div class="radio__wrapper">
+                            <label class="radio__label">By Artist
+                                <input type="radio" value="ARTIST" name="searchRadio">
+                                <span class="radio__checkmark"></span>
 
-                        </label>
-                        <label class="radio__label">By Song
-                            <input type="radio" checked value="SONG" name="searchRadio" value="song">
-                            <span class="radio__checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="input__wrapper">
-                        <input id="searchTerm" type="text" class="c-input input--large input--search"
-                            placeholder="Search" maxlength="100" />
+                            </label>
+                            <label class="radio__label">By Song
+                                <input type="radio" checked value="SONG" name="searchRadio" value="song">
+                                <span class="radio__checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="input__wrapper">
+                            <input id="searchTerm" type="text" class="c-input input--large input--search"
+                                placeholder="Search" maxlength="100" />
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="body__add">
-                <div class="addSong__content">
-                    <div class="addSong__message">Can’t find a song in our database? Add your own.</div>
-                    <input id="inputAddSongTitle" type="text" class="c-input input--xlarge addSong__input"
-                        placeholder="Song Name" maxlength="100" />
-                    <input id="inputAddSongArtist" type="text" class="c-input input--xlarge addSong__input"
-                        placeholder="Artist Name" maxlength="100" />
-                    <button id="btnManualEntry" class="c-button button--medium button--enabled addSong__button">ADD
-                        SONG</button>
+                <div id="body__add">
+                    <div class="addSong__content">
+                        <div class="addSong__message">Can’t find a song in our database? Add your own.</div>
+                        <input id="inputAddSongTitle" type="text" class="c-input input--xlarge addSong__input"
+                            placeholder="Song Name" maxlength="100" />
+                        <input id="inputAddSongArtist" type="text" class="c-input input--xlarge addSong__input"
+                            placeholder="Artist Name" maxlength="100" />
+                        <button id="btnManualEntry" class="c-button button--medium button--enabled addSong__button">ADD
+                            SONG</button>
+                    </div>
+                </div>
+                <div class="songs">
+                    <div class="songs__message" style="display:none;"></div>
+                    <!-- Songs list -->
                 </div>
             </div>
-            <div class="songs">
-                <div class="songs__message" style="display:none;"></div>
-                <!-- Songs list -->
+        </div>
+    </div>
+    <div class="share" style="display:none;">
+        <div class="share__header">
+        </div>
+        <div class="share__content">
+            <div class="share__heading share__heading--h1">YOUR VOTES HAVE BEEN ENTERED</div>
+            <div class="share__heading share__heading--h2">Share your entry with your friends automatically below or
+                alternatively save this image to share on a social platform of your choice.</div>
+            <div class="share__heading share__heading--h4" style="margin-bottom: 20px;">Share your votes via the social
+                icons below!<br>Tap and hold the image to save, then share to instagram.</div>
+            <div class="share__heading share__heading--h3">SHARE TO</div>
+            <div class="share__icons">
+                <!-- <div id="fb-root"></div> -->
+                <div id="fbShare" class="fb-share-button" data-href="https://www.your-domain.com/your-page.html"
+                    data-layout="button" data-size="large">
+                </div>
+                <div id="twitterShare" class="twitter-share"></div>
+                <div id="instaShare" style="margin-left:5px;"><a href="https://instagram.com" target="_blank"><img
+                            src="https://images.mediaworks.nz/countdown/image/insta-icon.png" height="28px"
+                            width="28px"></a></div>
+                <!-- <a href="#" class="fa fa-facebook"></a> -->
+                <!-- <a href="#" class="fa fa-twitter"></a> -->
+                <!-- <a href="#" class="fa fa-link"></a> -->
+            </div>
+            <!-- <div><div class="share__heading share__heading--h4" style="margin-bottom: 20px;">Tap and hold the image below to see all sharing options</div></div> -->
+            <div class="share__artwork">
             </div>
         </div>
     </div>
-</div>
-<div class="share" style="display:none;">
-    <div class="share__header">
+    <div id="playlist">
+        <script type="text/javascript">(function () { var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0]; script.src = "https://radio-api.mediaworks.nz/widget/votewidgettest1MW16474817/voting_THEEDGE_THISISTESTVOTENAME_2022.js"; tag.parentNode.insertBefore(script, tag); })()
+        </script>
     </div>
-    <div class="share__content">
-        <div class="share__heading share__heading--h1">YOUR VOTES HAVE BEEN ENTERED</div>
-        <div class="share__heading share__heading--h2">Share your entry with your friends automatically below or
-            alternatively save this image to share on a social platform of your choice.</div>
-        <div class="share__heading share__heading--h4" style="margin-bottom: 20px;">Share your votes via the social
-            icons below!<br>Tap and hold the image to save, then share to instagram.</div>
-        <div class="share__heading share__heading--h3">SHARE TO</div>
-        <div class="share__icons">
-            <!-- <div id="fb-root"></div> -->
-            <div id="fbShare" class="fb-share-button" data-href="https://www.your-domain.com/your-page.html"
-                data-layout="button" data-size="large">
-            </div>
-            <div id="twitterShare" class="twitter-share"></div>
-            <div id="instaShare" style="margin-left:5px;"><a href="https://instagram.com" target="_blank"><img
-                        src="https://images.mediaworks.nz/countdown/image/insta-icon.png" height="28px"
-                        width="28px"></a></div>
-            <!-- <a href="#" class="fa fa-facebook"></a> -->
-            <!-- <a href="#" class="fa fa-twitter"></a> -->
-            <!-- <a href="#" class="fa fa-link"></a> -->
-        </div>
-        <!-- <div><div class="share__heading share__heading--h4" style="margin-bottom: 20px;">Tap and hold the image below to see all sharing options</div></div> -->
-        <div class="share__artwork">
-        </div>
-    </div>
-</div>
-<div id="playlist">
-    <script
-        type="text/javascript">(function () { var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0]; script.src = "https://radio-api.mediaworks.nz/widget/votewidgettest1MW16474817/voting_THEEDGE_THISISTESTVOTENAME_2022.js"; tag.parentNode.insertBefore(script, tag); })()
-    </script>
-</div>
 </body>
-</html> 
+
+</html>

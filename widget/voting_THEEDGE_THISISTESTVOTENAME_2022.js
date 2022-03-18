@@ -364,7 +364,7 @@
             var slides = [];
             for (var i = 0; i < total; i++) {
                 var slide = '<div class="swiper-slide">' +
-                    '<div class="slide swiper__slide">' +
+                    '<div class="slide swiper__slide" style="background-color: white; padding-top: 0px;">' +
                     '<div class="slide__artwork"><img class="slide__placeholder" src="https://images.mediaworks.nz/countdown/voting_widget/img/plusicon.png" /></div>' +
                     '<div class="slide__number">' + index++ + '</div>' +
                     '<div class="slide__song">Song Title</div>' +
@@ -534,7 +534,7 @@
             return btn;
         }
         function getSlide(number, artwork, title, artist) {
-            var slide = '<div class="swiper-slide"><div class="slide swiper__slide"><div class="slide__artwork slide__artwork--added">' +
+            var slide = '<div class="swiper-slide"><div class="slide swiper__slide" style="background-color: white; padding-top: 0px;"><div class="slide__artwork slide__artwork--added">' +
                 '<img class="slide__image" src="' + artwork + '" />' +
                 '<span id="removeFromSlide" class="button--circle minus"></span>' +
                 '</div>' +
